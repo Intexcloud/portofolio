@@ -901,36 +901,27 @@
           <div class="dot dot-y"></div>
           <div class="dot dot-g"></div>
         </div>
+
         <div class="dashboard-title-bar">AI Candidate Scoring Engine</div>
-      </div>
 
-      <div style="padding:2rem; background:var(--surface2);">
-
-        <h4 style="margin-bottom:1rem;">🎯 Simulate Candidate Scoring</h4>
-
-        <div style="display:grid; gap:12px; max-width:400px;">
-
-          <label>Skill Match (%)</label>
-          <input type="number" id="skill" placeholder="e.g. 75" min="0" max="100">
-
-          <label>Experience (Years)</label>
-          <input type="number" id="exp" placeholder="e.g. 2" min="0" max="20">
-
-          <label>Education Level</label>
-          <select id="edu">
-            <option value="1">High School</option>
-            <option value="2">Diploma</option>
-            <option value="3" selected>Bachelor</option>
-            <option value="4">Master</option>
-          </select>
-
-          <button class="btn-primary" onclick="runAI()">Run AI Prediction</button>
-
-          <div id="resultBox" style="margin-top:1rem; font-size:14px;"></div>
-
+        <div class="dashboard-actions">
+          <a href="https://github.com/Intexcloud/Ai-Talent-Dashboard" target="_blank" class="dashboard-btn">
+            View Code
+          </a>
+          <a href="https://ai-talent-match-intelligence.streamlit.app/" target="_blank" class="dashboard-btn">
+            Open Fullscreen ↗
+          </a>
         </div>
-
       </div>
+
+      <div style="background:var(--surface2);">
+        <iframe
+          src="https://ai-talent-match-intelligence.streamlit.app/?embedded=true"
+          style="width:100%; height:650px; border:none; display:block;"
+          allowfullscreen>
+        </iframe>
+      </div>
+
     </div>
 
     <div style="margin-top:1.5rem;">
@@ -1103,14 +1094,6 @@ WITHIN GROUP (ORDER BY score) AS baseline_score
           • Supports faster & objective HR decisions<br>
           • Reduces bias in evaluation
         </p>
-       <div class="project-links">
-         <a href="https://github.com/Intexcloud/Ai-Talent-Dashboard" target="_blank" class="btn">
-           View Code
-         </a>
-        <a href="https://ai-talent-match-intelligence.streamlit.app/" target="_blank" class="btn btn-secondary">
-          Live Demo
-        </a>
-       </div>
         <div class="project-tags">
           <span class="tag tag-purple">AI Analytics</span>
           <span class="tag">Talent Intelligence</span>
@@ -1365,31 +1348,6 @@ WITHIN GROUP (ORDER BY score) AS baseline_score
   <div>© 2025 <strong>Sandy Aprilyanto</strong>. Made with ❤️ in Indonesia.</div>
   <div>Data Analyst · Open to Opportunities</div>
 </footer>
-<script>
-  function runAI() {
-    const skill = document.getElementById('skill').value;
-    const exp = document.getElementById('exp').value;
-    const edu = document.getElementById('edu').value;
-
-    // weighted scoring
-    const score =
-      (skill * 0.5) +
-      (exp * 10 * 0.3) +
-      (edu * 25 * 0.2);
-
-    const finalScore = Math.min(100, Math.round(score));
-
-    let label = "";
-    if (finalScore > 80) label = "🔥 Strong Candidate";
-    else if (finalScore > 60) label = "✅ Potential Candidate";
-    else label = "⚠️ Needs Improvement";
-
-    document.getElementById('resultBox').innerHTML =
-      "<strong>Job Fit Score:</strong> " + finalScore + "%<br>" +
-      "<strong>Status:</strong> " + label;
-}
-</script>
-
 <script>
   // Scroll animations
   const observer = new IntersectionObserver((entries) => {
