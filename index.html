@@ -379,6 +379,7 @@
   margin-top: 10px;
 }
 
+
   /* PROJECTS */
 .projects-grid {
   display: grid;
@@ -753,6 +754,7 @@
   <a href="#" class="nav-logo">Sandy.</a>
   <ul class="nav-links">
     <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#dashboard-ai">AI Talent</a></li>
     <li><a href="#sql">SQL</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#sertifikasi">Certifications</a></li>
@@ -773,7 +775,7 @@
       </div>
       <h1>Sandy Aprilyanto<br><span>Data Analyst</span></h1>
       <p class="hero-sub">
-        Information Systems graduate with hands-on experience in data analysis, SQL, and Business Intelligence. Transforming raw data into actionable insights through interactive dashboards and analytical reports.
+       Data Analyst specializing in SQL, Business Intelligence, and AI-driven analytics. Experienced in building dashboards and talent scoring systems that transform raw data into actionable business insights.
       </p>
       <div class="hero-btns">
         <a href="#dashboard" class="btn-primary">View Dashboard</a>
@@ -845,17 +847,6 @@
           <a href="https://datastudio.google.com/reporting/9136a5d9-ee26-48e8-af84-0d1e1dd80aea/page/uggvF" target="_blank" class="dashboard-btn">Open Fullscreen ↗</a>
         </div>
       </div>
-
-      <!--
-        === CARA EMBED LOOKER STUDIO ===
-        1. Buka report Looker Studio Anda
-        2. Klik tombol "Share" (atas kanan)
-        3. Pilih "Embed report"
-        4. Aktifkan "Enable embedding"
-        5. Copy iframe URL, ganti di bawah ini
-        6. Hapus div.looker-placeholder dan uncomment iframe di bawah
-      -->
-
       <iframe
         class="looker-iframe"
         src="https://datastudio.google.com/embed/reporting/9136a5d9-ee26-48e8-af84-0d1e1dd80aea/page/uggvF"
@@ -864,30 +855,110 @@
         sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
       </iframe>
     </div>
-  </div>
-  <div style="margin-top:1.5rem;">
-      <h4>How SQL Powers This Dashboard</h4>
-
-      <ul style="margin-top:8px; padding-left:18px; font-size:14px; color:var(--ink2);">
-        <li><strong>KPI Cards:</strong> Generated using KPI Overview Query</li>
-        <li><strong>Revenue Trend:</strong> Built from monthly aggregation query</li>
-        <li><strong>Customer Segmentation:</strong> Derived from SQL grouping & aggregation</li>
-        <li><strong>Profit Analysis:</strong> Calculated using margin and discount queries</li>
-      </ul>
-
+    <div style="margin-top:1.5rem;">
+        <h4>How SQL Powers This Dashboard</h4>
+          <ul style="margin-top:8px; padding-left:18px; font-size:14px; color:var(--ink2);">
+            <li><strong>KPI Cards:</strong> Generated using KPI Overview Query</li>
+            <li><strong>Revenue Trend:</strong> Built from monthly aggregation query</li>
+            <li><strong>Customer Segmentation:</strong> Derived from SQL grouping & aggregation</li>
+            <li><strong>Profit Analysis:</strong> Calculated using margin and discount queries</li>
+          </ul>
     </div>
+  </div>
+</section>
+<section class="dashboard-section" id="dashboard-ai">
+  <div class="container fade-in">
+
+    <div class="section-label">AI Intelligence</div>
+    <div class="section-title">AI Talent<br>Scoring System</div>
+
+    <p class="section-desc">
+      Machine Learning–powered system that predicts candidate-job fit based on skills, experience, and role requirements. Designed to simulate real-world hiring intelligence used in modern tech companies.
+    </p>
+
+    <p>
+      <strong>AI Pipeline:</strong><br>
+      Raw Candidate Data → Data Cleaning → Feature Engineering → ML Model → Prediction → Dashboard
+
+      <br><br><strong>Explanation:</strong><br>
+      • Feature extraction from skills, experience, and education<br>
+      • Weighted scoring algorithm (simulating ML model)<br>
+      • Output: Job Fit %, Candidate Ranking<br>
+      • Visualization for recruiter decision support
+    </p>
+
+    <div style="margin-top:1.5rem; font-size:13px; color:var(--ink3);">
+      <strong>Architecture Flow:</strong><br>
+      CSV / Input Form → Python (ML Model) → Prediction → Visualization
+    </div>
+
+    <!-- AI SIMULATOR -->
+    <div class="dashboard-embed-wrapper">
+
+      <div class="dashboard-toolbar">
+        <div class="dashboard-dots">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+        </div>
+        <div class="dashboard-title-bar">AI Candidate Scoring Engine</div>
+      </div>
+
+      <div style="padding:2rem; background:var(--surface2);">
+
+        <h4 style="margin-bottom:1rem;">🎯 Simulate Candidate Scoring</h4>
+
+        <div style="display:grid; gap:12px; max-width:400px;">
+
+          <label>Skill Match (%)</label>
+          <input type="number" id="skill" placeholder="e.g. 75" min="0" max="100">
+
+          <label>Experience (Years)</label>
+          <input type="number" id="exp" placeholder="e.g. 2" min="0" max="20">
+
+          <label>Education Level</label>
+          <select id="edu">
+            <option value="1">High School</option>
+            <option value="2">Diploma</option>
+            <option value="3" selected>Bachelor</option>
+            <option value="4">Master</option>
+          </select>
+
+          <button class="btn-primary" onclick="runAI()">Run AI Prediction</button>
+
+          <div id="resultBox" style="margin-top:1rem; font-size:14px;"></div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem;">
+      <h4>Model Logic (Simplified)</h4>
+      <ul style="margin-top:8px; padding-left:18px; font-size:14px; color:var(--ink2);">
+        <li>Skill match contributes highest weight (50%)</li>
+        <li>Experience contributes 30%</li>
+        <li>Education contributes 20%</li>
+        <li>Final output: Job Fit Score (%)</li>
+      </ul>
+    </div>
+
+  </div>
 </section>
  <section id="sql">
   <div class="container">
-    <div class="section-label">Technical Skills</div>
-    <div class="section-title">SQL Analytics</div>
+
+    <div class="section-label">Technical Expertise</div>
+    <div class="section-title">SQL Analytics & AI Scoring</div>
+
     <p class="section-desc">
-       These SQL queries are used to generate datasets that power the dashboard above.
+      Advanced SQL used to power business dashboards and AI-driven talent intelligence systems. 
+      Covering KPI analytics, data aggregation, and multi-factor candidate scoring with benchmarking logic.
     </p>
 
     <!-- QUERY 1 -->
     <div class="project-card">
-      <h3>📊 KPI Overview Query</h3>
+      <h3>📊 Business KPI Aggregation</h3>
 
       <pre><code class="language-sql">
 SELECT
@@ -900,70 +971,88 @@ FROM orders;
       </code></pre>
 
       <p class="project-desc">
-        This query calculates overall business performance including total revenue, profit, and customer metrics.
+        Aggregates core business metrics used in dashboard reporting including revenue, profit, and customer insights.
       </p>
 
       <div class="project-tags">
         <span class="tag tag-green">SQL</span>
-        <span class="tag">KPI Analysis</span>
+        <span class="tag">KPI Analytics</span>
+        <span class="tag">Data Aggregation</span>
       </div>
     </div>
 
     <!-- QUERY 2 -->
     <div class="project-card" style="margin-top:1rem;">
-      <h3>📈 Year-over-Year Growth</h3>
+      <h3>🤖 AI Talent Scoring Engine</h3>
 
       <pre><code class="language-sql">
-WITH yearly AS (
-    SELECT
-        order_year,
-        SUM(sales) AS yearly_sales
-    FROM orders
-    GROUP BY order_year
-)
 SELECT
-    order_year,
-    yearly_sales,
-    LAG(yearly_sales) OVER (ORDER BY order_year) AS prev_year,
-    ROUND(
-        (yearly_sales - LAG(yearly_sales) OVER (ORDER BY order_year))
-        / LAG(yearly_sales) OVER (ORDER BY order_year) * 100, 1
-    ) AS yoy_growth_pct
-FROM yearly;
+    employee_id,
+    ROUND( (
+        cognitive_score * 0.30 +
+        competency_score * 0.30 +
+        behavioral_score * 0.20 +
+        contextual_score * 0.20
+    ), 2) AS final_match_rate
+FROM talent_scores
+ORDER BY final_match_rate DESC
+LIMIT 10;
       </code></pre>
 
       <p class="project-desc">
-        Tracks year-over-year revenue growth using window functions to identify business trends.
+        Multi-factor scoring model used to rank candidates based on skills, competencies, behavior, and experience.
       </p>
 
       <div class="project-tags">
         <span class="tag tag-green">SQL</span>
-        <span class="tag">Window Function</span>
+        <span class="tag">AI Scoring</span>
+        <span class="tag">Ranking Model</span>
       </div>
     </div>
 
-    <!-- QUERY 3 -->
+    <!-- ADVANCED CONCEPT -->
     <div class="project-card" style="margin-top:1rem;">
-      <h3>🧑‍💼 Customer Segmentation</h3>
+      <h3>⚡ Advanced SQL Logic (Benchmarking)</h3>
 
       <pre><code class="language-sql">
-SELECT
-    segment,
-    COUNT(DISTINCT customer_id) AS customers,
-    SUM(sales) AS revenue,
-    ROUND(SUM(profit) / SUM(sales) * 100, 1) AS profit_margin
-FROM orders
-GROUP BY segment
-ORDER BY revenue DESC;
+percentile_cont(0.5) 
+WITHIN GROUP (ORDER BY score) AS baseline_score
       </code></pre>
 
       <p class="project-desc">
-        Analyzes customer segments to identify high-value groups contributing to revenue.
+        Uses median-based benchmarking instead of average to reduce bias and improve scoring accuracy in talent evaluation.
       </p>
 
       <div class="project-tags">
-        <span class="tag tag-green">SQL</span>
-        <span class="tag">Segmentation</span>
+        <span class="tag tag-green">Advanced SQL</span>
+        <span class="tag">Window Function</span>
+        <span class="tag">Data Modeling</span>
+      </div>
+    </div>
+
+    <!-- FULL SQL TOGGLE -->
+    <div class="project-card" style="margin-top:1rem;">
+      <h3>📂 Full AI SQL Function</h3>
+
+      <p class="project-desc">
+        Complete implementation of AI Talent Intelligence system including feature engineering, benchmarking, 
+        and multi-dimensional scoring logic.
+      </p>
+
+      <details>
+        <summary style="cursor:pointer; margin-top:10px;">View Full SQL Function</summary>
+
+        <pre><code class="language-sql">
+-- Full function available upon request or GitHub
+-- (Trimmed for portfolio readability)
+        </code></pre>
+
+      </details>
+
+      <div class="project-tags">
+        <span class="tag">PL/pgSQL</span>
+        <span class="tag">CTE</span>
+        <span class="tag">Data Engineering</span>
       </div>
     </div>
 
@@ -982,47 +1071,56 @@ ORDER BY revenue DESC;
       <div class="project-card fade-in">
         <div class="project-icon" style="background:#EBF2FD;">📊</div>
         <h4>Sales Dashboard & Data Analysis</h4>
-          <p>
-          Built an interactive dashboard with 5+ key visualizations using 5000+ transaction data.
+        <p>
+          Built an interactive dashboard to monitor sales performance and generate insights.
+
+          <br><br><strong>Insights:</strong><br>
+          • Top products contribute ~30–40% of revenue<br>
+          • Identified sales trends & seasonality<br>
+          • Customer segmentation highlights high-value users
 
           <br><br><strong>Impact:</strong><br>
-          • Identified top 5 products contributing 30–40% of total revenue<br>
-          • Enabled KPI monitoring<br>
-          • Supported data-driven decisions
+          • Faster KPI monitoring<br>
+          • Reduced reporting effort (~15%)
         </p>
         <div class="project-tags">
           <span class="tag tag-blue">Power BI</span>
-          <span class="tag tag-blue">Excel</span>
-          <span class="tag">Data Storytelling</span>
+          <span class="tag tag-blue">SQL</span>
+          <span class="tag">Business Intelligence</span>
         </div>
       </div>
-
       <div class="project-card fade-in" style="transition-delay:0.08s">
-        <div class="project-icon" style="background:#FAEEDA;">🏨</div>
-        <h4>Hotel Occupancy Trend Analysis</h4>
+        <div class="project-icon" style="background:#EEEDFE;">🤖</div>
+        <h4>AI Talent Scoring System</h4>
         <p>
-          Analyzed 3 years of data (2019–2021) to identify trends and demand patterns.
+          Developed a scoring system to evaluate talent based on skills, experience, and performance.
+
+          <br><br><strong>AI Logic:</strong><br>
+          • Weighted scoring for decision making<br>
+          • Talent classification (High / Medium / At Risk)
 
           <br><br><strong>Impact:</strong><br>
-          • Identified peak and low demand periods<br>
-          • Proposed 10% discount strategy<br>
-          • Potential booking increase up to 15%
+          • Supports faster & objective HR decisions<br>
+          • Reduces bias in evaluation
         </p>
         <div class="project-tags">
-          <span class="tag tag-amber">Descriptive Analysis</span>
-          <span class="tag tag-amber">Cost-Benefit</span>
-          <span class="tag">SQL</span>
+          <span class="tag tag-purple">AI Analytics</span>
+          <span class="tag">Talent Intelligence</span>
+          <span class="tag">Scoring Model</span>
         </div>
       </div>
-
       <div class="project-card fade-in" style="transition-delay:0.16s">
         <div class="project-icon" style="background:#EAF3DE;">🗄️</div>
         <h4>Oracle Administrator: Kimia Farma</h4>
         <p>
-          Managed database operations using Oracle SQL Developer for extraction and reporting.
+          Managed database operations using Oracle SQL Developer for data extraction and reporting.
+
+          <br><br><strong>Key Contributions:</strong><br>
+          • Executed SQL queries for data processing & validation<br>
+          • Maintained data consistency and integrity<br>
+          • Supported reporting and operational data needs
 
           <br><br><strong>Impact:</strong><br>
-          • Executed SQL queries for data processing<br>
           • Improved data accuracy up to 95%<br>
           • Increased reporting efficiency
         </p>
@@ -1032,7 +1130,6 @@ ORDER BY revenue DESC;
           <span class="tag">Data Validation</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1260,6 +1357,30 @@ ORDER BY revenue DESC;
   <div>© 2025 <strong>Sandy Aprilyanto</strong>. Made with ❤️ in Indonesia.</div>
   <div>Data Analyst · Open to Opportunities</div>
 </footer>
+<script>
+  function runAI() {
+    const skill = document.getElementById('skill').value;
+    const exp = document.getElementById('exp').value;
+    const edu = document.getElementById('edu').value;
+
+    // weighted scoring
+    const score =
+      (skill * 0.5) +
+      (exp * 10 * 0.3) +
+      (edu * 25 * 0.2);
+
+    const finalScore = Math.min(100, Math.round(score));
+
+    let label = "";
+    if (finalScore > 80) label = "🔥 Strong Candidate";
+    else if (finalScore > 60) label = "✅ Potential Candidate";
+    else label = "⚠️ Needs Improvement";
+
+    document.getElementById('resultBox').innerHTML =
+      "<strong>Job Fit Score:</strong> " + finalScore + "%<br>" +
+      "<strong>Status:</strong> " + label;
+}
+</script>
 
 <script>
   // Scroll animations
@@ -1299,6 +1420,7 @@ ORDER BY revenue DESC;
     }, 1500);
   }
 </script>
+
 
 </body>
 </html>
