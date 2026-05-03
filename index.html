@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portofolio Data Analyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+ <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -741,6 +744,7 @@
   <a href="#" class="nav-logo">Sandy.</a>
   <ul class="nav-links">
     <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#sql">SQL</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#sertifikasi">Certifications</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -838,6 +842,99 @@
         sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
       </iframe>
     </div>
+  </div>
+ 
+</section>
+ <section id="sql">
+  <div class="container">
+    <div class="section-label">Technical Skills</div>
+    <div class="section-title">SQL Analytics</div>
+    <p class="section-desc">
+      Advanced SQL queries used for business analysis, KPI tracking, and data-driven decision making.
+    </p>
+
+    <!-- QUERY 1 -->
+    <div class="project-card">
+      <h3>📊 KPI Overview Query</h3>
+
+      <pre><code class="language-sql">
+SELECT
+    COUNT(DISTINCT order_id) AS total_orders,
+    COUNT(DISTINCT customer_id) AS unique_customers,
+    ROUND(SUM(sales), 2) AS total_revenue,
+    ROUND(SUM(profit), 2) AS total_profit,
+    ROUND(SUM(profit) / SUM(sales) * 100, 1) AS profit_margin_pct
+FROM orders;
+      </code></pre>
+
+      <p class="project-desc">
+        This query calculates overall business performance including total revenue, profit, and customer metrics.
+      </p>
+
+      <div class="project-tags">
+        <span class="tag tag-green">SQL</span>
+        <span class="tag">KPI Analysis</span>
+      </div>
+    </div>
+
+    <!-- QUERY 2 -->
+    <div class="project-card" style="margin-top:1rem;">
+      <h3>📈 Year-over-Year Growth</h3>
+
+      <pre><code class="language-sql">
+WITH yearly AS (
+    SELECT
+        order_year,
+        SUM(sales) AS yearly_sales
+    FROM orders
+    GROUP BY order_year
+)
+SELECT
+    order_year,
+    yearly_sales,
+    LAG(yearly_sales) OVER (ORDER BY order_year) AS prev_year,
+    ROUND(
+        (yearly_sales - LAG(yearly_sales) OVER (ORDER BY order_year))
+        / LAG(yearly_sales) OVER (ORDER BY order_year) * 100, 1
+    ) AS yoy_growth_pct
+FROM yearly;
+      </code></pre>
+
+      <p class="project-desc">
+        Tracks year-over-year revenue growth using window functions to identify business trends.
+      </p>
+
+      <div class="project-tags">
+        <span class="tag tag-green">SQL</span>
+        <span class="tag">Window Function</span>
+      </div>
+    </div>
+
+    <!-- QUERY 3 -->
+    <div class="project-card" style="margin-top:1rem;">
+      <h3>🧑‍💼 Customer Segmentation</h3>
+
+      <pre><code class="language-sql">
+SELECT
+    segment,
+    COUNT(DISTINCT customer_id) AS customers,
+    SUM(sales) AS revenue,
+    ROUND(SUM(profit) / SUM(sales) * 100, 1) AS profit_margin
+FROM orders
+GROUP BY segment
+ORDER BY revenue DESC;
+      </code></pre>
+
+      <p class="project-desc">
+        Analyzes customer segments to identify high-value groups contributing to revenue.
+      </p>
+
+      <div class="project-tags">
+        <span class="tag tag-green">SQL</span>
+        <span class="tag">Segmentation</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
