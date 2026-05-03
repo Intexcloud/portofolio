@@ -819,7 +819,20 @@
     <div class="section-label">Live Dashboard</div>
     <div class="section-title">Sales<br>Dashboard</div>
     <p class="section-desc">Real-time dashboard integrated with Looker Studio tracking KPIs, revenue, and business trends live.</p>
-
+    <p>
+    <strong>Data Pipeline:</strong><br>
+    Raw Data → Data Cleaning (Python) → SQL Database → Analytical Queries → Looker Studio Dashboard
+    
+    <br><br><strong>Explanation:</strong><br>
+    • Data is cleaned and transformed using Python (Pandas)<br>
+    • Stored in structured SQL tables<br>
+    • SQL queries generate KPIs and aggregated metrics<br>
+    • Results are visualized in Looker Studio dashboard
+    </p>
+    <div style="margin-top:1.5rem; font-size:13px; color:var(--ink3);">
+      <strong>Architecture Flow:</strong><br>
+       CSV Dataset → Python (Cleaning) → SQLite Database → SQL Queries → Looker Studio → Dashboard
+    </div>
     <div class="dashboard-embed-wrapper">
       <div class="dashboard-toolbar">
         <div class="dashboard-dots">
@@ -852,6 +865,16 @@
       </iframe>
     </div>
   </div>
+  <div style="margin-top:1.5rem;">
+   <h4>How SQL Powers This Dashboard</h4>
+ 
+   <ul style="margin-top:8px; padding-left:18px; font-size:14px; color:var(--ink2);">
+     <li><strong>KPI Cards:</strong> Generated using KPI Overview Query</li>
+     <li><strong>Revenue Trend:</strong> Built from monthly aggregation query</li>
+     <li><strong>Customer Segmentation:</strong> Derived from SQL grouping & aggregation</li>
+     <li><strong>Profit Analysis:</strong> Calculated using margin and discount queries</li>
+   </ul>
+ </div>
  
 </section>
  <section id="sql">
@@ -859,7 +882,7 @@
     <div class="section-label">Technical Skills</div>
     <div class="section-title">SQL Analytics</div>
     <p class="section-desc">
-      Advanced SQL queries used for business analysis, KPI tracking, and data-driven decision making.
+       These SQL queries are used to generate datasets that power the dashboard above.
     </p>
 
     <!-- QUERY 1 -->
