@@ -408,10 +408,25 @@
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* TOMBOL LIVE APP (PUCUK KARTU) */
+.btn-card-action {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.btn-card-action:hover {
+  opacity: 0.8;
 }
 
 /* TITLE */
@@ -437,10 +452,12 @@
   flex-direction: column;
 }
 
+/* IMPACT FIX - Memastikan ukurannya selalu seragam di semua kartu */
 .project-impact {
   margin-top: auto;
   font-size: 13px;
   color: var(--ink2);
+  min-height: 90px;
 }
 
 .project-impact ul {
@@ -452,12 +469,14 @@
   margin-bottom: 4px;
 }
 
-/* TAG */
+/* TAG FIX - Memastikan kotak tag ukurannya seragam biarpun jadi 2 baris */
 .project-tags {
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  min-height: 56px;
+  align-content: flex-start;
 }
 
 .tag {
@@ -1033,68 +1052,107 @@ WITHIN GROUP (ORDER BY score) AS baseline_score
 
     <div class="projects-grid">
 
+      <!-- PROJECT 1 -->
       <div class="project-card fade-in">
-        <div class="project-icon" style="background:#EBF2FD;">📊</div>
-        <h4>Sales Dashboard & Data Analysis</h4>
-        <p>
-          Built an interactive dashboard to monitor sales performance and generate insights.
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+          <div class="project-icon" style="background:#EBF2FD; margin-bottom: 0;">📊</div>
+          <a href="https://datastudio.google.com/reporting/9136a5d9-ee26-48e8-af84-0d1e1dd80aea/page/uggvF" target="_blank" class="btn-card-action">Live App ↗</a>
+        </div>
+        
+        <h3>Sales Dashboard & Data Analysis</h3>
 
-          <br><br><strong>Insights:</strong><br>
-          • Top products contribute ~30–40% of revenue<br>
-          • Identified sales trends & seasonality<br>
-          • Customer segmentation highlights high-value users
+        <div class="project-desc">
+          Developed an interactive dashboard to monitor sales performance in real-time with high accuracy.
+          <br><br><strong>Insights:</strong>
+          <ul style="padding-left: 16px; margin-top: 4px;">
+            <li>Top products contribute ~30–40% of revenue</li>
+            <li>Identified sales trends & seasonality</li>
+            <li>Customer segmentation highlights high-value users</li>
+          </ul>
+        </div>
 
-          <br><br><strong>Impact:</strong><br>
-          • Faster KPI monitoring<br>
-          • Reduced reporting effort (~15%)
-        </p>
+        <div class="project-impact">
+          <strong>Impact:</strong>
+          <ul>
+            <li>Faster KPI monitoring</li>
+            <li>Reduced reporting effort (~15%)</li>
+          </ul>
+        </div>
+
         <div class="project-tags">
           <span class="tag tag-blue">Power BI</span>
           <span class="tag tag-blue">SQL</span>
           <span class="tag">Business Intelligence</span>
         </div>
       </div>
+
+      <!-- PROJECT 2 -->
       <div class="project-card fade-in" style="transition-delay:0.08s">
-        <div class="project-icon" style="background:#EEEDFE;">🤖</div>
-        <h4>AI Talent Scoring System</h4>
-        <p>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+          <div class="project-icon" style="background:#EEEDFE; margin-bottom: 0;">🤖</div>
+          <a href="https://ai-talent-match-intelligence.streamlit.app/" target="_blank" class="btn-card-action">Live App ↗</a>
+        </div>
+        
+        <h3>AI Talent Scoring System</h3>
+        
+        <div class="project-desc">
           Developed a scoring system to evaluate talent based on skills, experience, and performance.
+          <br><br><strong>AI Logic:</strong>
+          <ul style="padding-left: 16px; margin-top: 4px;">
+            <li>Weighted scoring for decision making</li>
+            <li>Talent classification (High / Medium / At Risk)</li>
+          </ul>
+        </div>
 
-          <br><br><strong>AI Logic:</strong><br>
-          • Weighted scoring for decision making<br>
-          • Talent classification (High / Medium / At Risk)
+        <div class="project-impact">
+          <strong>Impact:</strong>
+          <ul>
+            <li>Supports faster & objective HR decisions</li>
+            <li>Reduces bias in evaluation</li>
+          </ul>
+        </div>
 
-          <br><br><strong>Impact:</strong><br>
-          • Supports faster & objective HR decisions<br>
-          • Reduces bias in evaluation
-        </p>
         <div class="project-tags">
           <span class="tag tag-purple">AI Analytics</span>
           <span class="tag">Talent Intelligence</span>
           <span class="tag">Scoring Model</span>
         </div>
       </div>
-      <div class="project-card fade-in" style="transition-delay:0.16s">
-        <div class="project-icon" style="background:#EAF3DE;">🗄️</div>
-        <h4>Oracle Administrator: Kimia Farma</h4>
-        <p>
-          Managed database operations using Oracle SQL Developer for data extraction and reporting.
+      
+      <!-- PROJECT 3 -->
+      <div class="project-card fade-in" style="transition-delay:0.24s">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+          <div class="project-icon" style="background:#FAEEDA; margin-bottom: 0;">📈</div>
+          <a href="https://fmcg-ai-forecast.streamlit.app/" target="_blank" class="btn-card-action">Live App ↗</a>
+        </div>
+        
+        <h3>Demand Forecasting</h3>
+        
+        <div class="project-desc">
+          Developed a predictive model to forecast future product demand and optimize inventory levels.
+          <br><br><strong>Key Contributions:</strong>
+          <ul style="padding-left: 16px; margin-top: 4px;">
+            <li>Analyzed historical trends & seasonality</li>
+            <li>Built time-series forecasting models using Python</li>
+            <li>Created inventory alerts & planning logic</li>
+          </ul>
+        </div>
 
-          <br><br><strong>Key Contributions:</strong><br>
-          • Executed SQL queries for data processing & validation<br>
-          • Maintained data consistency and integrity<br>
-          • Supported reporting and operational data needs
+        <div class="project-impact">
+          <strong>Impact:</strong>
+          <ul>
+            <li>Reduced stockout occurrences</li>
+            <li>Decreased excess inventory costs efficiently</li>
+          </ul>
+        </div>
 
-          <br><br><strong>Impact:</strong><br>
-          • Improved data accuracy up to 95%<br>
-          • Increased reporting efficiency
-        </p>
         <div class="project-tags">
-          <span class="tag tag-green">Oracle SQL</span>
-          <span class="tag tag-green">Database Admin</span>
-          <span class="tag">Data Validation</span>
+          <span class="tag tag-amber">Python</span>
+          <span class="tag tag-amber">Time Series</span>
+          <span class="tag">Forecasting</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1360,7 +1418,6 @@ WITHIN GROUP (ORDER BY score) AS baseline_score
     }, 1500);
   }
 </script>
-
 
 </body>
 </html>
