@@ -892,23 +892,21 @@
     <div class="section-title">AI Talent<br>Scoring System</div>
 
     <p class="section-desc">
-      Machine Learning–powered system that predicts candidate-job fit based on skills, experience, and role requirements. Designed to simulate real-world hiring intelligence used in modern tech companies.
-    </p>
-
+      A data-driven Talent Match Intelligence system built on SQL pattern discovery + LLM integration. Identifies success patterns from employee performance data via EDA, operationalizes them into modular SQL scoring logic (CTE + median benchmarking), and surfaces insights through an AI-augmented Streamlit dashboard.</p>
     <p>
       <strong>AI Pipeline:</strong><br>
-      Raw Candidate Data → Data Cleaning → Feature Engineering → ML Model → Prediction → Dashboard
-
+      Employee Data → EDA (Pattern Discovery) → SQL Scoring Logic (CTE) → LLM Integration → Streamlit Dashboard
+      
       <br><br><strong>Explanation:</strong><br>
-      • Feature extraction from skills, experience, and education<br>
-      • Weighted scoring algorithm (simulating ML model)<br>
-      • Output: Job Fit %, Candidate Ranking<br>
-      • Visualization for recruiter decision support
+      • EDA (heatmap, radar chart, correlation) identifies success patterns from top performers (rating 5)<br>
+      • Modular SQL scoring via CTE + percentile_cont for median-based benchmarking<br>
+      • LLM (OpenRouter API) generates job descriptions dynamically from role context<br>
+      • Output: Job Fit Score, candidate tier (High Match / At Risk), gap analysis per competency
     </p>
 
     <div style="margin-top:1.5rem; font-size:13px; color:var(--ink3);">
       <strong>Architecture Flow:</strong><br>
-      CSV / Input Form → Python (ML Model) → Prediction → Visualization
+      Employee Data (Supabase) → EDA (Pattern Discovery) → SQL Scoring Engine (CTE) → LLM Integration (OpenRouter) → Streamlit Dashboard
     </div>
 
     <!-- AI SIMULATOR -->
@@ -944,7 +942,7 @@
     </div>
 
     <div style="margin-top:1.5rem;">
-      <h4>Model Logic (Simplified)</h4>
+      <h4>Scoring Formula</h4>
       <ul style="margin-top:8px; padding-left:18px; font-size:14px; color:var(--ink2);">
         <li>Skill match contributes highest weight (50%)</li>
         <li>Experience contributes 30%</li>
@@ -1065,7 +1063,7 @@ WITHIN GROUP (ORDER BY score) AS baseline_score
           Developed an interactive dashboard to monitor sales performance in real-time with high accuracy.
           <br><br><strong>Insights:</strong>
           <ul style="padding-left: 16px; margin-top: 4px;">
-            <li>Top products contribute ~30–40% of revenue</li>
+            <li>Top products contribute 30–40% of revenue</li>
             <li>Identified sales trends & seasonality</li>
             <li>Customer segmentation highlights high-value users</li>
           </ul>
@@ -1074,15 +1072,15 @@ WITHIN GROUP (ORDER BY score) AS baseline_score
         <div class="project-impact">
           <strong>Impact:</strong>
           <ul>
-            <li>Faster KPI monitoring</li>
-            <li>Reduced reporting effort (~15%)</li>
+            <li>Discounts above 20% turn profit negative flags pricing risk instantly</li>
+            <li>Quadrant chart separates high margin vs high volume SKUs for prioritization</li>
           </ul>
         </div>
 
         <div class="project-tags">
           <span class="tag tag-blue">Power BI</span>
           <span class="tag tag-blue">SQL</span>
-          <span class="tag">Business Intelligence</span>
+          <span class="tag">Looker Studio</span>
         </div>
       </div>
 
@@ -1099,24 +1097,24 @@ WITHIN GROUP (ORDER BY score) AS baseline_score
           Developed a scoring system to evaluate talent based on skills, experience, and performance.
           <br><br><strong>Insights:</strong>
           <ul style="padding-left: 16px; margin-top: 4px;">
-            <li>Quantified subjective hiring criteria into measurable, data-driven scores.</li>
-            <li>Identified key skills and traits that strongly predict candidate-job fit.</li>
-            <li>Segmented the talent pool into actionable tiers (High Match / At Risk).</li>
+            <li>EDA (heatmap, radar chart, correlation) uncovers success patterns from top performers (rating 5).</li>
+            <li>Median-based SQL benchmarking via CTE + percentile_cont reduces scoring bias.</li>
+            <li>LLM (OpenRouter API) generates job profiles dynamically from role context.</li>
           </ul>
         </div>
 
         <div class="project-impact">
           <strong>Impact:</strong>
           <ul>
-            <li>Supports faster & objective HR decisions</li>
-            <li>Reduces bias in evaluation</li>
+            <li>Enables faster, objective succession decisions backed by structured data</li>
+            <li>Reduces manual job profile writing from hours to seconds</li>
           </ul>
         </div>
 
         <div class="project-tags">
-          <span class="tag tag-purple">AI Analytics</span>
-          <span class="tag">Talent Intelligence</span>
-          <span class="tag">Scoring Model</span>
+          <span class="tag tag-purple">Python</span>
+          <span class="tag">SQL CTE</span>
+          <span class="tag">LLM API</span>
         </div>
       </div>
       
@@ -1130,27 +1128,27 @@ WITHIN GROUP (ORDER BY score) AS baseline_score
         <h3>Demand Forecasting</h3>
         
         <div class="project-desc">
-          Developed a predictive model to forecast future product demand and optimize inventory levels.
+          Built an end-to-end ML pipeline to forecast monthly FMCG sales across multiple SKUs from 190k+ transactions.
           <br><br><strong>Insights:</strong>
           <ul style="padding-left: 16px; margin-top: 4px;">
-            <li>Uncovered distinct seasonal purchasing patterns from historical sales data.</li>
-            <li>Identified optimal inventory thresholds to balance supply and demand.</li>
-            <li>Detected early warning trends to prevent future stockouts.</li>
+            <li>Compared XGBoost vs LightGBM, XGBoost selected automatically via RMSE (310.76 vs 316.25).</li>
+            <li>Lag features (1–6 months) capture seasonal demand patterns per SKU.</li>
+            <li>Variance analysis flags over/under-forecast risk per product.</li>
           </ul>
         </div>
 
         <div class="project-impact">
           <strong>Impact:</strong>
           <ul>
-            <li>Reduced stockout occurrences</li>
-            <li>Decreased excess inventory costs efficiently</li>
+            <li>Enables proactive inventory decisions before stockouts occur</li>
+            <li>Reduces manual forecast effort with automated model selection</li>
           </ul>
         </div>
 
         <div class="project-tags">
           <span class="tag tag-amber">Python</span>
-          <span class="tag tag-amber">Time Series</span>
-          <span class="tag">Forecasting</span>
+          <span class="tag tag-amber">Pandas</span>
+          <span class="tag">scikit-learn</span>
         </div>
       </div>
 
