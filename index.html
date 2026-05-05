@@ -888,8 +888,8 @@
 <section class="dashboard-section" id="dashboard-ai">
   <div class="container fade-in">
 
-    <div class="section-label">Talent Analytics</div>
-    <div class="section-title">Talent Analytics &<br>Scoring System</div>
+    <div class="section-label">AI Intelligence</div>
+    <div class="section-title">AI Talent<br>Scoring System</div>
 
     <p class="section-desc">
       A data-driven Talent Match Intelligence system built on SQL pattern discovery + LLM integration. Identifies success patterns from employee performance data via EDA, operationalizes them into modular SQL scoring logic (CTE + median benchmarking), and surfaces insights through an AI-augmented Streamlit dashboard.</p>
@@ -919,7 +919,7 @@
           <div class="dot dot-g"></div>
         </div>
 
-        <div class="dashboard-title-bar">Talent Analytics & Scoring Engine</div>
+        <div class="dashboard-title-bar">AI Candidate Scoring Engine</div>
 
         <div class="dashboard-actions">
           <a href="https://ai-talent-match-intelligence.streamlit.app/" target="_blank" class="dashboard-btn">
@@ -989,7 +989,7 @@ FROM orders;
 
     <!-- QUERY 2 -->
     <div class="project-card" style="margin-top:1rem;">
-      <h3>🤖 Talent Scoring Engine</h3>
+      <h3>🤖 AI Talent Scoring Engine</h3>
 
       <pre><code class="language-sql">
 SELECT
@@ -1092,7 +1092,7 @@ WITHIN GROUP (ORDER BY score) AS baseline_score
           </div>
         </div>
         
-        <h3>Talent Scoring System</h3>
+        <h3>AI Talent Scoring System</h3>
         
         <div class="project-desc">
           Developed a scoring system to evaluate talent based on skills, experience, and performance.
@@ -1155,6 +1155,42 @@ WITHIN GROUP (ORDER BY score) AS baseline_score
           <span class="tag">scikit-learn</span>
         </div>
       </div>
+    <!-- PROJECT 4: FUNNEL ANALYSIS -->
+    <div class="project-card fade-in" style="transition-delay:0.32s">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+        <div class="project-icon" style="background:#EBF2FD; margin-bottom: 0;">🌪️</div>
+        <div style="display:flex;gap:8px;">
+          <a href="https://github.com/Intexcloud/Funnel-Analysis" target="_blank" class="dashboard-btn">View Code</a>
+          <a href="https://datastudio.google.com/reporting/25ebbe30-46af-4ea2-8f93-8673b6c5edee/page/xQFxF" target="_blank" class="btn-card-action">Live App ↗</a>
+        </div>
+      </div>
+      
+      <h3>E-Commerce Funnel Analysis</h3>
+      
+      <div class="project-desc">
+        Mapped the end-to-end customer journey from <em>product view</em> to <em>final payment</em> to pinpoint conversion friction.
+        <br><br><strong>Insights:</strong>
+        <ul style="padding-left: 16px; margin-top: 4px;">
+          <li>Isolated specific churn points at the "Add to Cart" stage.</li>
+          <li>Correlated daily traffic spikes with conversion success rates.</li>
+          <li>Ranked marketing channels by ROI and transaction volume.</li>
+        </ul>
+      </div>
+
+      <div class="project-impact">
+        <strong>Impact:</strong>
+        <ul>
+          <li>Optimized marketing spend by identifying low-converting traffic sources.</li>
+          <li>Reduced data complexity by providing clear, real-time funnel health metrics for stakeholders.</li>
+        </ul>
+      </div>
+
+      <div class="project-tags">
+        <span class="tag tag-blue">SQL</span>
+        <span class="tag tag-blue">Looker Studio</span>
+        <span class="tag">Conversion Optimization</span>
+      </div>
+    </div>
 
     </div>
   </div>
